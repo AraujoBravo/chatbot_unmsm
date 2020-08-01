@@ -1,0 +1,44 @@
+intents:
+  - saludo: {triggers: action_saludo}
+  - adios
+  - gracias
+  - faq
+  - info_tramite_doc
+  - datos_tramite
+  - out_of_scope
+
+entities:
+  - tipo
+  - documento
+  - facultad
+
+responses:
+  utter_de_nada:
+    - text: no hay de que :)
+  utter_saludo:
+    - text: Hola, en que puedo ayudarte?
+  utter_adios:
+    - text: Adios!
+  utter_ask_documento:
+    - text: Que documento desea tramitar?
+  utter_ask_tipo:
+    - text: Es un tramite de pregrado o posgrado?
+  utter_ask_facultad:
+    - text: En que facultad?
+  utter_out_of_scope:
+    - text: Lo comunicare con un asistente, espere por favor.
+
+slots:
+  documento:
+    type: unfeaturized
+  facultad:
+    type: unfeaturized
+  tipo:
+    type: unfeaturized
+
+forms:
+  - tramite_doc_form
+
+actions:
+  - respond_faq
+  - action_saludo
